@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">FormApp</string>
+    <string name="str_calcular">Calcular</string>
+
+    <string-array name="formulas_array">
+        <item>Ley de gravitación</item>
+        <item>Fórmula de la tería de la relatividad</item>
+        <item>Teorema de pitágoras</item>
+    </string-array>
+</resources>
