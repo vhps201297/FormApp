@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">FormApp</string>
     <string name="str_calcular">Calcular</string>
+    <string name="str_autor">Víctor Hugo Pólito Seba</string>
+    <string name="str_version">versión 1.0.0</string>
 
     <string-array name="formulas_array">
         <item>Ley de gravitación</item>
