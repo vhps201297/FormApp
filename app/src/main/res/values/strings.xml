@@ -3,10 +3,13 @@
     <string name="str_calcular">Calcular</string>
     <string name="str_autor">Víctor Hugo Pólito Seba</string>
     <string name="str_version">versión 1.0.0</string>
+    <string name="str_formula">formula</string>
 
     <string-array name="formulas_array">
         <item>Ley de gravitación</item>
         <item>Fórmula de la tería de la relatividad</item>
         <item>Teorema de pitágoras</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

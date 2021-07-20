@@ -38,6 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:src="@drawable/ley_grav"
+                android:contentDescription="@string/str_formula"
                 />
 
             <Spinner
@@ -61,38 +62,11 @@
         app:cardCornerRadius="8dp"
         android:layout_margin="16dp"
         >
-        <RelativeLayout
-            android:padding="8dp"
+
+        <FrameLayout
+            android:id="@+id/frame_container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/til_var"
-                android:layout_width="match_parent"
-                android:layout_marginTop="8dp"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:hint="var"
-                    />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/til_var2"
-                android:layout_below="@+id/til_var"
-                android:layout_width="match_parent"
-                android:layout_marginTop="8dp"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:hint="var2"
-                    />
-            </com.google.android.material.textfield.TextInputLayout>
-
-        </RelativeLayout>
+            android:layout_height="match_parent" />
 
 
     </androidx.cardview.widget.CardView>
