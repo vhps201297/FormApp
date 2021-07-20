@@ -1,7 +1,7 @@
 package com.example.formapp
 
-interface ListenerFragments {
+import android.os.Bundle
 
-    fun isValidated(isCorrect: Boolean)
-    fun errors(msg: List<String>)
+interface ListenerFragments {
+    fun isValidated(bundle: Bundle)
 }

@@ -1,10 +1,13 @@
 package com.example.formapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.formapp.databinding.ActivityMainBinding
@@ -16,9 +19,9 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     // Agregando ViewBinding
     private lateinit var binding: ActivityMainBinding;
-    lateinit var fragmentLawGravityBinding: FragmentLawGravityBinding
-    var positionSpinner = MainActivity.POSITION_NONE
-    var currentFragment: Fragment? = null
+    var fgGravityFragment = LawGravityFragment()
+    var fgPentagonalPrism = PentagonalPrismFragment()
+    var positionSpinner = MainActivity.POSITION_LAW_GRAVITY
     companion object{
         private const val POSITION_LAW_GRAVITY = 0
         private const val POSITION_PRISM_PENTA = 1
@@ -31,12 +34,14 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.spinnerForm.onItemSelectedListener = this
         ArrayAdapter.createFromResource(
             this, R.array.formulas_array, android.R.layout.simple_spinner_item).also {
             arrayAdapter ->
             arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             binding.spinnerForm.adapter = arrayAdapter
         }
+        supportFragmentManager.beginTransaction().replace(R.id.frame_container, fgGravityFragment).commit()
 
 
 
@@ -44,7 +49,16 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     fun onCLickCalculate(view: View) {
         when(positionSpinner){
+            POSITION_LAW_GRAVITY ->
+                fgGravityFragment.getValues(object : ListenerFragments{
+                    override fun isValidated(bundle: Bundle) {
+                        val intent = Intent(this@MainActivity, ResultActivity::class.java)
+                        intent.putExtra("bundle_gravity", bundle)
+                        startActivity(intent)
+                    }
 
+                })
+                POSITION_PRISM_PENTA -> Toast.makeText(this@MainActivity, "TOdavía no integradp", Toast.LENGTH_SHORT).show()
         }
 
     }
@@ -53,13 +67,23 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
         var fragmentTransaction = supportFragmentManager.beginTransaction()
-        positionSpinner = position
-        when(position){
-            POSITION_LAW_GRAVITY->
-                fragmentTransaction.add(R.id.frame_container, LawGravityFragment()).commit()
-            POSITION_PRISM_PENTA-> fragmentTransaction.add(R.id.frame_container, PentagonalPrismFragment()).commit()
-            else->null
+
+        when(parent!!.id){
+            R.id.spinner_form ->
+                when(position){
+                    POSITION_LAW_GRAVITY->
+                        fragmentTransaction.replace(R.id.frame_container, fgGravityFragment).addToBackStack(null).commit()
+                    POSITION_PRISM_PENTA-> fragmentTransaction.replace(R.id.frame_container, fgPentagonalPrism).commit()
+
+                }
+
+
+
         }
+        positionSpinner = position
+
+
+
     }
 
     override fun onNothingSelected(parent: AdapterView<*>?) {

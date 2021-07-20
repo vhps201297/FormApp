@@ -7,28 +7,23 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.formapp.ListenerFragments
 import com.example.formapp.R
+import com.example.formapp.databinding.FragmentLawGravityBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [LawGravityFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class LawGravityFragment : Fragment() {
-    private var param1: String? = null
-    private var param2: String? = null
+
+    companion object {
+        @JvmStatic
+        fun getData(listener: ListenerFragments) =
+            LawGravityFragment().apply {
+                this.listener = listener
+            }
+    }
     private var listener: ListenerFragments? = null
+    private var _binding: FragmentLawGravityBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
 
     override fun onCreateView(
@@ -36,26 +31,33 @@ class LawGravityFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_law_gravity, container, false)
+        _binding = FragmentLawGravityBinding.inflate(inflater,container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment LawGravityFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String, listener: ListenerFragments) =
-            LawGravityFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    fun getValues(listener: ListenerFragments){
+        with(binding){
+            if (edtxtM1.text.toString().isEmpty()){
+                edtxtM1.error = "Se debe ingresar un valor para M"
+            } else if (edtxtM2.text.toString().isEmpty()){
+                edtxtM2.error = "Se debe ingresar un valor para m"
+            } else if (edtxtR.text.toString().isEmpty()){
+                edtxtR.error = "Se debe ingresar un valor para r"
+            } else{
+                var bundle = Bundle()
+                bundle.putString("M", edtxtM1.text.toString())
+                bundle.putString("m", edtxtM2.text.toString())
+                bundle.putString("r", edtxtR.text.toString())
+                listener.isValidated(bundle)
+                //return bundle
             }
+            //return null
+        }
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
+
 }
