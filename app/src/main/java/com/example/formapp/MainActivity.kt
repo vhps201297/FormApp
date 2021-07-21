@@ -18,7 +18,7 @@ import com.example.formapp.fragments.PentagonalPrismFragment
 class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     // Agregando ViewBinding
-    private lateinit var binding: ActivityMainBinding;
+    private lateinit var binding: ActivityMainBinding
     var fgGravityFragment = LawGravityFragment()
     var fgPentagonalPrism = PentagonalPrismFragment()
     var positionSpinner = MainActivity.POSITION_LAW_GRAVITY
@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             binding.spinnerForm.adapter = arrayAdapter
         }
-        supportFragmentManager.beginTransaction().replace(R.id.frame_container, fgGravityFragment).commit()
+        //supportFragmentManager.beginTransaction().replace(binding.frameContainer.id, fgGravityFragment).commit()
 
 
 
@@ -52,37 +52,39 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             POSITION_LAW_GRAVITY ->
                 fgGravityFragment.getValues(object : ListenerFragments{
                     override fun isValidated(bundle: Bundle) {
-                        val intent = Intent(this@MainActivity, ResultActivity::class.java)
-                        intent.putExtra("bundle_gravity", bundle)
-                        startActivity(intent)
+                        sendValuesOnIntent("bundle_gravity", bundle)
                     }
-
                 })
-                POSITION_PRISM_PENTA -> Toast.makeText(this@MainActivity, "TOdavía no integradp", Toast.LENGTH_SHORT).show()
-        }
 
+            POSITION_PRISM_PENTA ->
+                fgPentagonalPrism.getValues(object :ListenerFragments{
+                    override fun isValidated(bundle: Bundle) {
+                        sendValuesOnIntent("bundle_penta", bundle)
+                    }
+                })
+        }
     }
 
-
+    fun sendValuesOnIntent(idBundle: String, bundle: Bundle){
+        val intent = Intent(this@MainActivity, ResultActivity::class.java)
+        intent.putExtra(idBundle, bundle)
+        startActivity(intent)
+    }
 
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
         var fragmentTransaction = supportFragmentManager.beginTransaction()
-
-        when(parent!!.id){
-            R.id.spinner_form ->
-                when(position){
-                    POSITION_LAW_GRAVITY->
-                        fragmentTransaction.replace(R.id.frame_container, fgGravityFragment).addToBackStack(null).commit()
-                    POSITION_PRISM_PENTA-> fragmentTransaction.replace(R.id.frame_container, fgPentagonalPrism).commit()
-
-                }
-
-
-
+        Toast.makeText(this, "Position: $position", Toast.LENGTH_SHORT).show()
+        when(parent!!.selectedItemPosition){
+            POSITION_LAW_GRAVITY-> {
+                binding.imgForm.setImageResource(R.drawable.ley_grav)
+                fragmentTransaction.replace(R.id.frame_container, fgGravityFragment).addToBackStack(null).commit()
+            }
+            POSITION_PRISM_PENTA-> {
+                binding.imgForm.setImageResource(R.drawable.form_prism_pent)
+                fragmentTransaction.replace(R.id.frame_container, fgPentagonalPrism).addToBackStack(null).commit()
+            }
         }
         positionSpinner = position
-
-
 
     }
 
