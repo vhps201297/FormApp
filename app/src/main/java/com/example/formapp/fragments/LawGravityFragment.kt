@@ -1,19 +1,13 @@
 package com.example.formapp.fragments
 
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-import androidx.core.widget.addTextChangedListener
-import com.example.formapp.ListenerFragments
-import com.example.formapp.R
+import com.example.formapp.utils.ListenerFragments
 import com.example.formapp.databinding.FragmentLawGravityBinding
 import com.example.formapp.utils.TextWatcherEditText
-import com.google.android.material.textfield.TextInputLayout
 
 class LawGravityFragment : Fragment() {
 
@@ -62,9 +56,7 @@ class LawGravityFragment : Fragment() {
                 bundle.putString("m", edtxtM2.text.toString())
                 bundle.putString("r", edtxtR.text.toString())
                 listener.isValidated(bundle)
-                //return bundle
             }
-            //return null
         }
     }
 

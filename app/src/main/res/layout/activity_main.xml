@@ -32,7 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Nombre de formula"
+                android:text="@string/str_name_form"
                 android:textSize="18sp" />
 
             <ImageView
@@ -81,7 +81,7 @@
     <Button
         android:id="@+id/btn_calcular"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="50dp"
         android:onClick="onCLickCalculate"
         android:text="@string/str_calcular"
         android:layout_margin="8dp"

@@ -5,31 +5,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.formapp.ListenerFragments
-import com.example.formapp.R
+import com.example.formapp.utils.ListenerFragments
 import com.example.formapp.databinding.FragmentPentagonalPrismBinding
 import com.example.formapp.utils.TextWatcherEditText
 
 
 class PentagonalPrismFragment : Fragment() {
 
-    companion object {
-
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            PentagonalPrismFragment().apply {
-                arguments = Bundle().apply {
-
-                }
-            }
-    }
-
     private var _binding: FragmentPentagonalPrismBinding? = null
     private val binding get() = _binding!!
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -44,10 +30,8 @@ class PentagonalPrismFragment : Fragment() {
             edtxtL.addTextChangedListener(TextWatcherEditText(tilL))
             edtxtH.addTextChangedListener(TextWatcherEditText(tilH))
         }
-
         return binding.root
     }
-
 
     fun getValues(listener: ListenerFragments){
         with(binding){
@@ -63,9 +47,7 @@ class PentagonalPrismFragment : Fragment() {
                 bundle.putString("l", edtxtL.text.toString())
                 bundle.putString("h", edtxtH.text.toString())
                 listener.isValidated(bundle)
-                //return bundle
             }
-            //return null
         }
     }
 
