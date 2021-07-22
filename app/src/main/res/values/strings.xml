@@ -7,12 +7,19 @@
 
     <string-array name="formulas_array">
         <item>Ley de gravitación</item>
-        <item>Fórmula de la teoría de la relatividad</item>
-        <item>Teorema de pitágoras</item>
+        <item>Volumen de prisma pentagonal</item>
+        <item>Ecuación de los gases ideales</item>
     </string-array>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="str_regresar">Regresar</string>
-    <string name="str_parametros">Parámetro %1$s: 2%$s</string>
-    <string name="str_resultado">Resultado %1$s = 2%$s</string>
+    <string name="str_parametros">Parámetro %1$s: %2$10.4f</string>
+    <string name="str_resultado">Resultado %1$s = %2$10.4f</string>
     <string name="str_name_form">%1$s</string>
+    <string name="str_title_menu">%1$s</string>
+    <string name="str_var_ideal_gas_select">Selecciona que variable quieres obtener</string>
+    <string name="str_set_hint">%1$s</string>
+    <string name="str_hint_v">Volumen (V)</string>
+    <string name="str_hint_n">n (Moles de gas)</string>
+    <string name="str_hint_t">Temperatura (T)</string>
+    <string name="str_hint_p">Presion (P)</string>
 </resources>

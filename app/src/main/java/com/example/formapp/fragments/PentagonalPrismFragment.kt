@@ -43,13 +43,12 @@ class PentagonalPrismFragment : Fragment() {
                 tilH.error = "Se debe ingresar un valor de altura (h)"
             } else{
                 var bundle = Bundle()
-                bundle.putString("a", edtxtA.text.toString())
-                bundle.putString("l", edtxtL.text.toString())
-                bundle.putString("h", edtxtH.text.toString())
+                bundle.putFloat("a", edtxtA.text.toString().toFloat())
+                bundle.putFloat("l", edtxtL.text.toString().toFloat())
+                bundle.putFloat("h", edtxtH.text.toString().toFloat())
                 listener.isValidated(bundle)
             }
         }
     }
-
 
 }

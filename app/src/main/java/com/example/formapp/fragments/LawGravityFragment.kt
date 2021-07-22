@@ -50,11 +50,14 @@ class LawGravityFragment : Fragment() {
                 tilM2.error = "Se debe ingresar un valor para m"
             } else if (edtxtR.text.toString().isEmpty()){
                 tilR.error = "Se debe ingresar un valor para r"
-            } else{
+            } else if (edtxtR.text.toString().toFloat() == 0F){
+                tilR.error = "El valor de r no puede ser cero"
+            }
+            else{
                 var bundle = Bundle()
-                bundle.putString("M", edtxtM1.text.toString())
-                bundle.putString("m", edtxtM2.text.toString())
-                bundle.putString("r", edtxtR.text.toString())
+                bundle.putFloat("M", edtxtM1.text.toString().toFloat())
+                bundle.putFloat("m", edtxtM2.text.toString().toFloat())
+                bundle.putFloat("r", edtxtR.text.toString().toFloat())
                 listener.isValidated(bundle)
             }
         }
