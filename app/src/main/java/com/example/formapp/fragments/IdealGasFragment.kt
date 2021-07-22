@@ -16,7 +16,7 @@ import com.example.formapp.utils.Constants.FG_POSITION_V
 import com.example.formapp.utils.ListenerFragments
 import com.example.formapp.utils.TextWatcherEditText
 
-class IdealGasFragment : Fragment(), AdapterView.OnItemSelectedListener {
+class IdealGasFragment : Fragment(), AdapterView.OnItemSelectedListener, AdapterView.OnItemClickListener {
 
     private var _binding: FragmentIdealGasBinding? = null
     private val binding get() = _binding!!
@@ -39,7 +39,7 @@ class IdealGasFragment : Fragment(), AdapterView.OnItemSelectedListener {
         // Inflate the layout for this fragment
         _binding = FragmentIdealGasBinding.inflate(inflater, container, false)
 
-        (binding.spinnerIdealGas.editText as AutoCompleteTextView).onItemSelectedListener = this
+
         val items = listOf("Presion (P)", "Volumen (V)", "n (Moles de gas)", "Temperatura (T)")
         val arrayAdapter = ArrayAdapter<String>(requireContext(), R.layout.support_simple_spinner_dropdown_item)
         arrayAdapter.addAll(items)
@@ -51,6 +51,8 @@ class IdealGasFragment : Fragment(), AdapterView.OnItemSelectedListener {
             edtxt2.addTextChangedListener(TextWatcherEditText(tilIdeal2))
             edtxt3.addTextChangedListener(TextWatcherEditText(tilIdeal3))
         }
+
+        (binding.spinnerIdealGas.editText as? AutoCompleteTextView)?.setOnItemClickListener(this)
 
         return binding.root
     }
@@ -81,8 +83,8 @@ class IdealGasFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
     fun updateHints(hintForEdtxt1: String, hintForEdtxt2: String, hintForEdtxt3: String){
         with(binding){
-            edtxt1.hint = getString(R.string.str_set_hint, hintForEdtxt1)
-            edtxt2.hint = getString(R.string.str_set_hint, hintForEdtxt2)
+            tilIdeal1.editText!!.hint = getString(R.string.str_set_hint, hintForEdtxt1)
+            tilIdeal2.editText!!.setHint(getString(R.string.str_set_hint, hintForEdtxt2))
             edtxt3.hint = getString(R.string.str_set_hint, hintForEdtxt3)
         }
     }
@@ -96,8 +98,16 @@ class IdealGasFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
         Log.e("SELECTED_ITEM", "Position: $position")
+
+    }
+
+    override fun onNothingSelected(parent: AdapterView<*>?) {
+
+    }
+
+    override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
         this.itemSelected = position
-        when(parent!!.selectedItemPosition){
+        when(position){
             FG_POSITION_P ->{
                 updateHints(getString(R.string.str_hint_v),getString(R.string.str_hint_n),getString(R.string.str_hint_t))
                 updatePositionViews(null, binding.edtxt1, binding.edtxt2, binding.edtxt3)
@@ -121,10 +131,6 @@ class IdealGasFragment : Fragment(), AdapterView.OnItemSelectedListener {
                 listenerChangeItem!!.changeItemSelected(FG_POSITION_T)
             }
         }
-    }
-
-    override fun onNothingSelected(parent: AdapterView<*>?) {
-
     }
 
 }

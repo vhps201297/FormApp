@@ -24,7 +24,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/spinner_ideal_gas"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/str_var_ideal_gas_select"
@@ -32,6 +32,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <AutoCompleteTextView
+                android:id="@+id/autoComplete"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="none"
@@ -47,6 +48,7 @@
             android:layout_marginEnd="4dp"
             app:layout_constraintEnd_toStartOf="@+id/guide_ideal_cv"
             app:layout_constraintStart_toStartOf="parent"
+            android:hint="@string/str_set_hint"
             app:layout_constraintTop_toBottomOf="@+id/spinner_ideal_gas">
 
             <EditText
@@ -54,7 +56,7 @@
                 style="@style/StyleEditText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="@string/str_set_hint"
+
                 />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -64,6 +66,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginStart="4dp"
+            android:hint="@string/str_set_hint"
             app:errorEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/guide_ideal_cv"
@@ -75,7 +78,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@android:color/transparent"
-                android:hint="@string/str_set_hint" />
+
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
