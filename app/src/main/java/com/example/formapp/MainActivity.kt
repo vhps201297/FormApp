@@ -47,10 +47,13 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener, Li
             binding.spinnerForm.adapter = arrayAdapter
 
         }
-
-        //supportFragmentManager.beginTransaction().replace(binding.frameContainer.id, fgGravityFragment).commit()
     }
 
+    /**
+     * Método que se ejecuta cada que el usuario da un click en el botón de "Calcular" y dependiendo
+     * de lo seleccionado en el spinner, se obtendran los valores que se llenaron en los fragmento
+     * para después anviar los valores a la otra actividad.
+     */
     fun onCLickCalculate(view: View) {
         when(positionSpinner){
             POSITION_LAW_GRAVITY ->
@@ -76,6 +79,10 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener, Li
         }
     }
 
+    /**
+     * Método encargado de enviar el bundle obtenido de los campos de los fragments, y enviarlos
+     * al activity de resultados, con la llave de la formula que se quiere obtener.
+     */
     fun sendValuesOnIntent(idBundle: String, bundle: Bundle){
         val intent = Intent(this@MainActivity, ResultActivity::class.java)
         intent.putExtra(idBundle, bundle)
@@ -83,6 +90,11 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener, Li
         startActivity(intent)
     }
 
+    /**
+     * Método sobreescrito de la interfaz AdapterView.OnItemSelectedListener, el cual observa
+     * cada que el usuario modifica la selección dentro de los items del Spinner. Dependiendo
+     * de lo que se haya seleccionado se infla cada fragment en el area correspondiente.
+     */
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
         var fragmentTransaction = supportFragmentManager.beginTransaction()
         positionSpinner = position

@@ -14,8 +14,7 @@
         android:layout_width="match_parent"
         android:contentDescription="@string/str_formula"
         android:layout_height="210dp"
-        android:src="@drawable/fondo"
-        android:scaleType="centerCrop"
+        android:background="@color/white"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/linear_detalles"
         />
@@ -35,9 +34,16 @@
             android:id="@+id/tv_name_form"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:text="@string/str_name_form"
             style="@style/TextStyleOnGreen"
             android:textSize="24sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/white"
+            android:layout_marginBottom="16dp"/>
 
         <TextView
             android:id="@+id/tv_first_param"
@@ -66,6 +72,11 @@
             android:text="@string/str_parametros"
             android:textColor="@color/white"
             android:textSize="16sp" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/white"
+            android:layout_marginTop="16dp"/>
 
         <TextView
             android:id="@+id/tv_result"

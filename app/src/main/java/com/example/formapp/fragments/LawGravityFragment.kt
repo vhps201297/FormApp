@@ -34,6 +34,14 @@ class LawGravityFragment : Fragment() {
         return binding.root
     }
 
+    /**
+     * Función encargada de devolver los valores que se ingresaron en este fragment a través de un
+     * Bundle, después de validar que los campos no estén vacíos y que la variable dentro del
+     * denominador no sea cero.
+     *
+     * @param listener interfaz encargada de devolver el bundle con los parámetros necesarios para
+     * pintarlos en la vista de resultados.
+     */
     fun getValues(listener: ListenerFragments){
         with(binding){
             if (edtxtM1.text.toString().isEmpty()){

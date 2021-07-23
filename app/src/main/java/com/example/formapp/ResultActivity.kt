@@ -1,7 +1,10 @@
 package com.example.formapp
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Html
+import android.text.Html.FROM_HTML_MODE_LEGACY
 import android.util.Log
 import android.view.View
 import com.example.formapp.databinding.ActivityResultBinding
@@ -100,7 +103,7 @@ class ResultActivity : AppCompatActivity() {
             layout.tvFirstParam.text = getString(R.string.str_parametros, "m1",m1)
             layout.tvSecondParam.text = getString(R.string.str_parametros, "m2",m2)
             layout.tvThirdParam.text = getString(R.string.str_parametros, "r",r)
-            layout.tvResult.text = getString(R.string.str_resultado, "F",res)
+            layout.tvResult.text = getString(R.string.str_resultado, getString(R.string.str_result_f),res)
         }
     }
 
@@ -116,7 +119,7 @@ class ResultActivity : AppCompatActivity() {
             layout.tvFirstParam.text = getString(R.string.str_parametros, "apotema",a)
             layout.tvSecondParam.text = getString(R.string.str_parametros, "l",l)
             layout.tvThirdParam.text = getString(R.string.str_parametros, "h",h)
-            layout.tvResult.text = getString(R.string.str_resultado, getString(R.string.str_hint_v), res)
+            layout.tvResult.text = getString(R.string.str_resultado, getString(R.string.str_result_v) , res)
         }
     }
 

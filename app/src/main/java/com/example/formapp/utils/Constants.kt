@@ -1,5 +1,8 @@
 package com.example.formapp.utils
 
+/**
+ * Constantes que se usan dentro de la aplicación, tanto en los activities como los fragments.
+ */
 object Constants {
     const val STRING_KEY_LAW_GRAVITY = "bundle_gravity"
     const val STRING_KEY_PENTA = "bundle_penta"

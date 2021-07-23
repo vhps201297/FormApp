@@ -23,7 +23,7 @@
     <string name="str_name_vpp">Pentagonal Prism Volume</string>
     <string name="str_full_name_lgu">Force between two bodies (Universal law of gravitation)</string>
     <string-array name="formulas_array">
-        <item>ENewton\'s law of universal gravitation</item>
+        <item>Newton\'s law of universal gravitation</item>
         <item>Pentagonal Prism Volume</item>
         <item>Ideal gas equation</item>
     </string-array>
@@ -31,4 +31,6 @@
     <string name="str_item_v">Volum (V)</string>
     <string name="str_item_n">n (Moles of gas)</string>
     <string name="str_item_t">Temperature (T)</string>
+    <string name="str_result_v">Volum [m3]</string>
+
 </resources>

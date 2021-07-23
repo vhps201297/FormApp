@@ -42,4 +42,8 @@
     <string name="str_item_v">Volumen (V)</string>
     <string name="str_item_n">n (Moles de gas)</string>
     <string name="str_item_t">Temperatura (T)</string>
+    <string name="str_result_v">Volumen [m3]</string>
+    <string name="str_result_f" translatable="false">F [m]</string>
+    <string name="str_icono" translatable="false">Icono</string>
+
 </resources>

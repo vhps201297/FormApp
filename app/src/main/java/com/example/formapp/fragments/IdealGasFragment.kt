@@ -26,7 +26,6 @@ class IdealGasFragment : Fragment(), AdapterView.OnItemClickListener {
     var listenerChangeItem: ListenerFragments.Spinner? = null
     private val binding get() = _binding!!
     private var itemSelected: Int = POSITION_NONE
-    private var edtxtZero: EditText? = null
     private var tilZero: TextInputLayout? = null
     private var key_calculate: String = ""
     private lateinit var errorEdtxt1: String
@@ -59,6 +58,14 @@ class IdealGasFragment : Fragment(), AdapterView.OnItemClickListener {
         return binding.root
     }
 
+    /**
+     * Función encargada de devolver los parámetros de la ecuación de gases ideales, validando
+     * las variables del fragment, y llenando los parámetros para realizar os cálculos y pasarlos
+     * en un Bundle.
+     *
+     * @param listener interfaz encargada de devolver el bundle con los parámetros necesarios para
+     * pintarlos en la vista de resultados.
+     */
     fun getValues(listener: ListenerFragments){
         if (isDataValidate()){
             when(key_calculate){
@@ -90,6 +97,10 @@ class IdealGasFragment : Fragment(), AdapterView.OnItemClickListener {
         }
     }
 
+    /**
+     * Función encargada de llenar los parámetros en un hashmap, el cual se utiliza como parámetro
+     * dentro de la clase FormCalculator para realizar los cálculos necesarios para cada despeje.
+     */
     fun fillParams(key_edtxt1: String, key_edtxt2: String, key_edtxt3: String): HashMap<String,Float>{
         with(binding){
             val hashTmp = HashMap<String, Float>()
@@ -100,6 +111,10 @@ class IdealGasFragment : Fragment(), AdapterView.OnItemClickListener {
         }
     }
 
+    /**
+     * Función encargada de validar que los campos del fragment no estén vacíos y que la variable
+     * que le corresponda estar en el denominador no deba ser cero.
+     */
     fun isDataValidate():Boolean{
         with(binding){
             if (spinnerIdealGas.editText!!.text.isEmpty()){
@@ -123,6 +138,10 @@ class IdealGasFragment : Fragment(), AdapterView.OnItemClickListener {
         }
     }
 
+    /**
+     * Función encargada de establecer los hints de inicio, ya que el AutoCompleteTextView no acepta
+     * valores por defecto, sino fueron seleccionados con un click.
+     */
     fun initViews(){
         with(binding){
             tilIdeal1.hint = getString(R.string.str_indefinido)
@@ -131,6 +150,11 @@ class IdealGasFragment : Fragment(), AdapterView.OnItemClickListener {
         }
     }
 
+
+    /**
+     * Método encargado de actualizar los hints de cada TextInputLayout después de que se seleccione
+     * que variable se quiere despejar en el AutoCompleteTextView.
+     */
     fun updateHintsAndErrors(hintForEdtxt1: String, hintForEdtxt2: String, hintForEdtxt3: String){
         with(binding){
             tilIdeal1.hint = getString(R.string.str_set_hint, hintForEdtxt1)
@@ -143,13 +167,16 @@ class IdealGasFragment : Fragment(), AdapterView.OnItemClickListener {
     }
 
 
+    /**
+     * Método que se tiene que implementar de la clase AdapterView.OnItemClickListener el cual se
+     * encarga de observar cada vez que se da un click en el AutoCompleteTextView.
+     */
     override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
         this.itemSelected = position
         when(position){
             FG_POSITION_P ->{
                 updateHintsAndErrors(getString(R.string.str_hint_v),getString(R.string.str_hint_n),getString(R.string.str_hint_t))
                 tilZero = binding.tilIdeal1 // Se actualiza el view que no puede ser cero, ya que causaría una indeterminación
-                edtxtZero = binding.edtxt1
                 key_calculate = "P"
                 listenerChangeItem!!.changeItemSelected(FG_POSITION_P)
             }
@@ -157,7 +184,6 @@ class IdealGasFragment : Fragment(), AdapterView.OnItemClickListener {
                 updateHintsAndErrors(getString(R.string.str_hint_p),getString(R.string.str_hint_n),getString(R.string.str_hint_t))
                 key_calculate = "V"
                 tilZero = binding.tilIdeal1
-                edtxtZero = binding.edtxt1
                 listenerChangeItem!!.changeItemSelected(FG_POSITION_V)
             }
 
@@ -165,7 +191,6 @@ class IdealGasFragment : Fragment(), AdapterView.OnItemClickListener {
                 updateHintsAndErrors(getString(R.string.str_hint_p),getString(R.string.str_hint_v),getString(R.string.str_hint_t))
                 key_calculate = "n"
                 tilZero = binding.tilIdeal3
-                edtxtZero = binding.edtxt3
                 listenerChangeItem!!.changeItemSelected(FG_POSITION_N)
             }
 
@@ -173,7 +198,6 @@ class IdealGasFragment : Fragment(), AdapterView.OnItemClickListener {
                 updateHintsAndErrors(getString(R.string.str_hint_p),getString(R.string.str_hint_v),getString(R.string.str_hint_n))
                 key_calculate = "T"
                 tilZero = binding.tilIdeal3
-                edtxtZero = binding.edtxt3
                 listenerChangeItem!!.changeItemSelected(FG_POSITION_T)
             }
         }
