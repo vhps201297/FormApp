@@ -29,8 +29,11 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="SplashScreen" parent="Theme.MaterialComponents.NoActionBar">
+    <style name="SplashScreen" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/green_500</item>
+        <item name="colorPrimaryVariant">@color/green_700</item>
         <item name="android:windowBackground">@color/green_500</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
     </style>
 
     <style name="TextStyleOnGreen" parent="TextAppearance.AppCompat">

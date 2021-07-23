@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.formapp.R
 import com.example.formapp.utils.ListenerFragments
 import com.example.formapp.databinding.FragmentPentagonalPrismBinding
 import com.example.formapp.utils.TextWatcherEditText
@@ -36,11 +37,11 @@ class PentagonalPrismFragment : Fragment() {
     fun getValues(listener: ListenerFragments){
         with(binding){
             if (edtxtA.text.toString().isEmpty()){
-                tilA.error = "Se debe ingresar el lado A"
+                tilA.error = getString(R.string.str_validate_a)
             } else if (edtxtL.text.toString().isEmpty()){
-                tilL.error = "Se debe ingresar el lado L"
+                tilL.error = getString(R.string.str_validate_lado)
             } else if (edtxtH.text.toString().isEmpty()){
-                tilH.error = "Se debe ingresar un valor de altura (h)"
+                tilH.error = getString(R.string.str_validate_h)
             } else{
                 var bundle = Bundle()
                 bundle.putFloat("a", edtxtA.text.toString().toFloat())

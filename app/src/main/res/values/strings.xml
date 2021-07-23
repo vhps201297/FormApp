@@ -10,16 +10,26 @@
         <item>Volumen de prisma pentagonal</item>
         <item>Ecuación de los gases ideales</item>
     </string-array>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="str_title_ideal_gas">Ecuación de los gases ideales</string>
     <string name="str_regresar">Regresar</string>
     <string name="str_parametros">Parámetro %1$s: %2$10.4f</string>
     <string name="str_resultado">Resultado %1$s = %2$10.4f</string>
     <string name="str_name_form">%1$s</string>
     <string name="str_title_menu">%1$s</string>
-    <string name="str_var_ideal_gas_select">Selecciona que variable quieres obtener</string>
+    <string name="str_var_ideal_gas_select">Selecciona que variable despejar</string>
     <string name="str_set_hint">%1$s</string>
-    <string name="str_hint_v">Volumen (V)</string>
-    <string name="str_hint_n">n (Moles de gas)</string>
-    <string name="str_hint_t">Temperatura (T)</string>
-    <string name="str_hint_p">Presion (P)</string>
+    <string name="str_set_error">Ingrese %1$s</string>
+    <string name="str_indefinido">Indefinido</string>
+    <string name="str_hint_v">Volumen (L)</string>
+    <string name="str_hint_n">n (mol)</string>
+    <string name="str_hint_t">Temperatura (K)</string>
+    <string name="str_hint_p">Presion (atm)</string>
+    <string name="str_validation_m1">Se debe ingresar un valor para M</string>
+    <string name="str_validation_m2">Se debe ingresar un valor para m</string>
+    <string name="str_validation_r">Se debe ingresar un valor para r</string>
+    <string name="str_no_cero">%1$s no puede ser cero</string>
+    <string name="str_validate_a">Se debe ingresar el lado A</string>
+    <string name="str_validate_lado">Se debe ingresar el lado L</string>
+    <string name="str_validate_h">Se debe ingresar un valor de altura (h)</string>
 </resources>

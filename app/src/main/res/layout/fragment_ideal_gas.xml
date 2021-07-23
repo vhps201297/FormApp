@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/str_var_ideal_gas_select"
-            app:boxBackgroundColor="@color/white"
+            app:boxBackgroundColor="@android:color/transparent"
             app:layout_constraintTop_toTopOf="parent">
 
             <AutoCompleteTextView
@@ -56,7 +56,6 @@
                 style="@style/StyleEditText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
                 />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -77,8 +76,6 @@
                 style="@style/StyleEditText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@android:color/transparent"
-
                 />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -97,7 +94,6 @@
                 style="@style/StyleEditText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@android:color/transparent"
                 android:hint="@string/str_set_hint" />
         </com.google.android.material.textfield.TextInputLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

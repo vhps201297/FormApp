@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.formapp.R
 import com.example.formapp.utils.ListenerFragments
 import com.example.formapp.databinding.FragmentLawGravityBinding
 import com.example.formapp.utils.TextWatcherEditText
@@ -45,13 +46,13 @@ class LawGravityFragment : Fragment() {
     fun getValues(listener: ListenerFragments){
         with(binding){
             if (edtxtM1.text.toString().isEmpty()){
-                tilM1.error = "Se debe ingresar un valor para M"
+                tilM1.error = getString(R.string.str_validation_m1)
             } else if (edtxtM2.text.toString().isEmpty()){
-                tilM2.error = "Se debe ingresar un valor para m"
+                tilM2.error = getString(R.string.str_validation_m2)
             } else if (edtxtR.text.toString().isEmpty()){
-                tilR.error = "Se debe ingresar un valor para r"
+                tilR.error = getString(R.string.str_validation_r)
             } else if (edtxtR.text.toString().toFloat() == 0F){
-                tilR.error = "El valor de r no puede ser cero"
+                tilR.error = getString(R.string.str_no_cero, "r")
             }
             else{
                 var bundle = Bundle()

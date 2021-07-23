@@ -7,12 +7,14 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.fragment.app.FragmentTransaction
 import com.example.formapp.databinding.ActivityMainBinding
 import com.example.formapp.fragments.IdealGasFragment
 import com.example.formapp.fragments.LawGravityFragment
 import com.example.formapp.fragments.PentagonalPrismFragment
 import com.example.formapp.utils.Constants.FG_POSITION_N
 import com.example.formapp.utils.Constants.FG_POSITION_P
+import com.example.formapp.utils.Constants.FG_POSITION_T
 import com.example.formapp.utils.Constants.FG_POSITION_V
 import com.example.formapp.utils.Constants.POSITION_IDEAL_GAS
 import com.example.formapp.utils.Constants.POSITION_LAW_GRAVITY
@@ -71,7 +73,6 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener, Li
                     }
 
                 })
-
         }
     }
 
@@ -90,21 +91,21 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener, Li
                 binding.tvNameForm.text = getString(R.string.str_name_form, "Ley de gravitación universal)")
                 binding.imgForm.setImageResource(R.drawable.ley_grav)
                 fragmentTransaction.replace(R.id.frame_container, fgGravityFragment)
-                    .addToBackStack(null)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                     .commit()
             }
             POSITION_PRISM_PENTA-> {
                 binding.tvNameForm.text = getString(R.string.str_name_form, "Volumen de prisma pentagonal")
                 binding.imgForm.setImageResource(R.drawable.form_prism_pent)
                 fragmentTransaction.replace(R.id.frame_container, fgPentagonalPrism)
-                    .addToBackStack(null)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                     .commit()
             }
             POSITION_IDEAL_GAS-> {
                 binding.tvNameForm.text = getString(R.string.str_name_form, "Ecuación de los gases ideales")
                 binding.imgForm.setImageResource(R.drawable.img_ideal_gas)
                 fragmentTransaction.replace(R.id.frame_container, fgIdealGas)
-                    .addToBackStack(null)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                     .commit()
             }
         }
@@ -119,11 +120,11 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener, Li
      * @param itemSelect Variable que alberga la posición del spinner
      */
     override fun changeItemSelected(itemSelect: Int) {
-        Toast.makeText(this, "ItemSelected: $itemSelect", Toast.LENGTH_SHORT).show()
         when(itemSelect){
             FG_POSITION_P-> binding.imgForm.setImageResource(R.drawable.form_p)
             FG_POSITION_V-> binding.imgForm.setImageResource(R.drawable.form_v)
             FG_POSITION_N-> binding.imgForm.setImageResource(R.drawable.form_n)
+            FG_POSITION_T-> binding.imgForm.setImageResource(R.drawable.form_t)
         }
     }
 }
