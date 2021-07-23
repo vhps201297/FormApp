@@ -45,5 +45,6 @@
     <string name="str_result_v">Volumen [m3]</string>
     <string name="str_result_f" translatable="false">F [m]</string>
     <string name="str_icono" translatable="false">Icono</string>
+    <string name="str_result_apothem">apotema [m]</string>
 
 </resources>

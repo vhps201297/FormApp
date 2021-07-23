@@ -32,5 +32,6 @@
     <string name="str_item_n">n (Moles of gas)</string>
     <string name="str_item_t">Temperature (T)</string>
     <string name="str_result_v">Volum [m3]</string>
+    <string name="str_result_apothem">apothem [m]</string>
 
 </resources>

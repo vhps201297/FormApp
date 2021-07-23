@@ -52,7 +52,7 @@ class ResultActivity : AppCompatActivity() {
                     layout.tvFirstParam.text = getString(R.string.str_parametros, getString(R.string.str_hint_v),V)
                     layout.tvSecondParam.text = getString(R.string.str_parametros, getString(R.string.str_hint_n),n)
                     layout.tvThirdParam.text = getString(R.string.str_parametros, getString(R.string.str_hint_t),T)
-                    layout.tvResult.text = getString(R.string.str_resultado, "P",P)
+                    layout.tvResult.text = getString(R.string.str_resultado, "P[atm]",P)
                 }
             }
 
@@ -63,7 +63,7 @@ class ResultActivity : AppCompatActivity() {
                     layout.tvFirstParam.text = getString(R.string.str_parametros, getString(R.string.str_hint_p),P)
                     layout.tvSecondParam.text = getString(R.string.str_parametros, getString(R.string.str_hint_n),n)
                     layout.tvThirdParam.text = getString(R.string.str_parametros, getString(R.string.str_hint_t),T)
-                    layout.tvResult.text = getString(R.string.str_resultado, "V",V)
+                    layout.tvResult.text = getString(R.string.str_resultado, "V[L]",V)
                 }
             }
 
@@ -74,7 +74,7 @@ class ResultActivity : AppCompatActivity() {
                     layout.tvFirstParam.text = getString(R.string.str_parametros, getString(R.string.str_hint_p),P)
                     layout.tvSecondParam.text = getString(R.string.str_parametros, getString(R.string.str_hint_v),V)
                     layout.tvThirdParam.text = getString(R.string.str_parametros, getString(R.string.str_hint_t),T)
-                    layout.tvResult.text = getString(R.string.str_resultado, "n",n)
+                    layout.tvResult.text = getString(R.string.str_resultado, "n[mol]",n)
                 }
             }
             FG_POSITION_T -> {
@@ -84,7 +84,7 @@ class ResultActivity : AppCompatActivity() {
                     layout.tvFirstParam.text = getString(R.string.str_parametros, getString(R.string.str_hint_p),P)
                     layout.tvSecondParam.text = getString(R.string.str_parametros, getString(R.string.str_hint_v),V)
                     layout.tvThirdParam.text = getString(R.string.str_parametros, getString(R.string.str_hint_n),n)
-                    layout.tvResult.text = getString(R.string.str_resultado, "T",T)
+                    layout.tvResult.text = getString(R.string.str_resultado, "T[K]",T)
                 }
             }
         }
@@ -116,9 +116,9 @@ class ResultActivity : AppCompatActivity() {
         with(binding){
             layout.imgCardResult.setImageResource(R.drawable.form_prism_pent)
             layout.tvNameForm.text = getString(R.string.str_name_form, getString(R.string.str_name_vpp))
-            layout.tvFirstParam.text = getString(R.string.str_parametros, "apotema",a)
-            layout.tvSecondParam.text = getString(R.string.str_parametros, "l",l)
-            layout.tvThirdParam.text = getString(R.string.str_parametros, "h",h)
+            layout.tvFirstParam.text = getString(R.string.str_parametros, getString(R.string.str_result_apothem),a)
+            layout.tvSecondParam.text = getString(R.string.str_parametros, "l[m]",l)
+            layout.tvThirdParam.text = getString(R.string.str_parametros, "h[m]",h)
             layout.tvResult.text = getString(R.string.str_resultado, getString(R.string.str_result_v) , res)
         }
     }
