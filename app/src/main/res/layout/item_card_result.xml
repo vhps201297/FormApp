@@ -12,6 +12,7 @@
     <ImageView
         android:id="@+id/img_card_result"
         android:layout_width="match_parent"
+        android:contentDescription="@string/str_formula"
         android:layout_height="210dp"
         android:src="@drawable/fondo"
         android:scaleType="centerCrop"

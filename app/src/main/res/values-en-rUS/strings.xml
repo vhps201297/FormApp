@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FormApp</string>
+    <string name="str_calcular">Calculate</string>
+    <string name="str_version">version 1.0.0</string>
+    <string name="str_formula">formula</string>
+    <string name="str_title_ideal_gas">Ideal gas equation</string>
+    <string name="str_regresar">Back</string>
+    <string name="str_parametros">Parameter %1$s: %2$10.4f</string>
+    <string name="str_resultado">Result %1$s = %2$10.4f</string>
+    <string name="str_var_ideal_gas_select">" Select which variable to clear"</string>
+    <string name="str_set_error">Enter %1$s</string>
+    <string name="str_indefinido">undefined</string>
+    <string name="str_hint_v">Volum [L]</string>
+    <string name="str_hint_t">Temperature [K]</string>
+    <string name="str_hint_p">Pressure [atm]</string>
+    <string name="str_validation_void">A value must be entered for %1$s</string>
+    <string name="str_no_cero">%1$s cannot be zero</string>
+    <string name="dtr_apotema">apothem</string>
+    <string name="str_select_var">Select a variable</string>
+    <string name="str_name_lgu">Newton\'s law of universal gravitation</string>
+    <string name="str_name_egi">Ideal gas equation</string>
+    <string name="str_name_vpp">Pentagonal Prism Volume</string>
+    <string name="str_full_name_lgu">Force between two bodies (Universal law of gravitation)</string>
+    <string-array name="formulas_array">
+        <item>ENewton\'s law of universal gravitation</item>
+        <item>Pentagonal Prism Volume</item>
+        <item>Ideal gas equation</item>
+    </string-array>
+    <string name="str_item_p">Pressure (P)</string>
+    <string name="str_item_v">Volum (V)</string>
+    <string name="str_item_n">n (Moles of gas)</string>
+    <string name="str_item_t">Temperature (T)</string>
+</resources>

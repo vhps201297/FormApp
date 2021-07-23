@@ -88,21 +88,21 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener, Li
         positionSpinner = position
         when(parent!!.selectedItemPosition){
             POSITION_LAW_GRAVITY-> {
-                binding.tvNameForm.text = getString(R.string.str_name_form, "Ley de gravitación universal)")
+                binding.tvNameForm.text = getString(R.string.str_name_form, getString(R.string.str_name_lgu))
                 binding.imgForm.setImageResource(R.drawable.ley_grav)
                 fragmentTransaction.replace(R.id.frame_container, fgGravityFragment)
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                     .commit()
             }
             POSITION_PRISM_PENTA-> {
-                binding.tvNameForm.text = getString(R.string.str_name_form, "Volumen de prisma pentagonal")
+                binding.tvNameForm.text = getString(R.string.str_name_form, getString(R.string.str_name_vpp))
                 binding.imgForm.setImageResource(R.drawable.form_prism_pent)
                 fragmentTransaction.replace(R.id.frame_container, fgPentagonalPrism)
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                     .commit()
             }
             POSITION_IDEAL_GAS-> {
-                binding.tvNameForm.text = getString(R.string.str_name_form, "Ecuación de los gases ideales")
+                binding.tvNameForm.text = getString(R.string.str_name_form, getString(R.string.str_name_egi))
                 binding.imgForm.setImageResource(R.drawable.img_ideal_gas)
                 fragmentTransaction.replace(R.id.frame_container, fgIdealGas)
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)

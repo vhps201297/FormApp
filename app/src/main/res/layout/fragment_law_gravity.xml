@@ -28,7 +28,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 style="@style/StyleEditText"
-                android:hint="M" />
+                android:hint="@string/str_m1" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -45,7 +45,7 @@
                 android:layout_height="match_parent"
                 android:background="@android:color/transparent"
                 style="@style/StyleEditText"
-                android:hint="m" />
+                android:hint="@string/str_m2" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -63,7 +63,7 @@
                 android:layout_height="match_parent"
                 android:background="@android:color/transparent"
                 style="@style/StyleEditText"
-                android:hint="r" />
+                android:hint="@string/str_r" />
         </com.google.android.material.textfield.TextInputLayout>
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

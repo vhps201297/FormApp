@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">FormApp</string>
     <string name="str_calcular">Calcular</string>
-    <string name="str_autor">Víctor Hugo Pólito Seba</string>
+    <string name="str_autor" translatable="false">Víctor Hugo Pólito Seba</string>
     <string name="str_version">versión 1.0.0</string>
     <string name="str_formula">formula</string>
 
@@ -10,26 +10,36 @@
         <item>Volumen de prisma pentagonal</item>
         <item>Ecuación de los gases ideales</item>
     </string-array>
-
     <string name="str_title_ideal_gas">Ecuación de los gases ideales</string>
     <string name="str_regresar">Regresar</string>
     <string name="str_parametros">Parámetro %1$s: %2$10.4f</string>
     <string name="str_resultado">Resultado %1$s = %2$10.4f</string>
-    <string name="str_name_form">%1$s</string>
-    <string name="str_title_menu">%1$s</string>
+    <string name="str_name_form" translatable="false">%1$s</string>
+    <string name="str_title_menu" translatable="false">%1$s</string>
     <string name="str_var_ideal_gas_select">Selecciona que variable despejar</string>
-    <string name="str_set_hint">%1$s</string>
+    <string name="str_set_hint" translatable="false">%1$s</string>
     <string name="str_set_error">Ingrese %1$s</string>
     <string name="str_indefinido">Indefinido</string>
-    <string name="str_hint_v">Volumen (L)</string>
-    <string name="str_hint_n">n (mol)</string>
-    <string name="str_hint_t">Temperatura (K)</string>
-    <string name="str_hint_p">Presion (atm)</string>
-    <string name="str_validation_m1">Se debe ingresar un valor para M</string>
-    <string name="str_validation_m2">Se debe ingresar un valor para m</string>
-    <string name="str_validation_r">Se debe ingresar un valor para r</string>
+    <string name="str_hint_v">Volumen [L]</string>
+    <string name="str_hint_n" translatable="false">n [mol]</string>
+    <string name="str_hint_t">Temperatura [K]</string>
+    <string name="str_hint_p">Presion [atm]</string>
+    <string name="str_validation_void">Se debe ingresar un valor para %1$s</string>
     <string name="str_no_cero">%1$s no puede ser cero</string>
-    <string name="str_validate_a">Se debe ingresar el lado A</string>
-    <string name="str_validate_lado">Se debe ingresar el lado L</string>
-    <string name="str_validate_h">Se debe ingresar un valor de altura (h)</string>
+    <string name="str_select_var">Seleccione una variable</string>
+    <string name="str_name_lgu">Ley de gravitación universal</string>
+    <string name="str_name_vpp">Volumen de prisma pentagonal</string>
+    <string name="str_name_egi">Ecuación de los gases ideales</string>
+    <string name="str_full_name_lgu">Fuerza entre dos cuerpos (Ley de Gravitación universal)</string>
+    <string name="dtr_apotema">apotema</string>
+    <string name="str_m1" translatable="false">M[Kg]</string>
+    <string name="str_m2" translatable="false">m[Kg]</string>
+    <string name="str_r" translatable="false">r[m]</string>
+    <string name="str_a" translatable="false">a[m]</string>
+    <string name="str_l" translatable="false">l[m]</string>
+    <string name="str_h" translatable="false">h[m]</string>
+    <string name="str_item_p">Presion (P)</string>
+    <string name="str_item_v">Volumen (V)</string>
+    <string name="str_item_n">n (Moles de gas)</string>
+    <string name="str_item_t">Temperatura (T)</string>
 </resources>

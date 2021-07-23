@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FormAppGreen">
-        <activity android:name=".ResultActivity" />
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".ResultActivity"
+            android:theme="@style/Theme.FormAppGreen.NoActioBar"
+            />
         <activity
             android:name=".SplashActivity"
             android:screenOrientation="portrait"

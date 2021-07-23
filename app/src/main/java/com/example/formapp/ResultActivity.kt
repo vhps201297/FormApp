@@ -96,7 +96,7 @@ class ResultActivity : AppCompatActivity() {
         val res = FormCalculator.calculateLGU(m1, m2, r).toFloat()
         with(binding){
             layout.imgCardResult.setImageResource(R.drawable.ley_grav)
-            layout.tvNameForm.text = getString(R.string.str_name_form, "Fuerza entre dos cuerpos (Ley de Gravitación universal)")
+            layout.tvNameForm.text = getString(R.string.str_name_form, getString(R.string.str_full_name_lgu))
             layout.tvFirstParam.text = getString(R.string.str_parametros, "m1",m1)
             layout.tvSecondParam.text = getString(R.string.str_parametros, "m2",m2)
             layout.tvThirdParam.text = getString(R.string.str_parametros, "r",r)
@@ -112,11 +112,11 @@ class ResultActivity : AppCompatActivity() {
         val res = FormCalculator.calculateVolPP(a, l, h).toFloat()
         with(binding){
             layout.imgCardResult.setImageResource(R.drawable.form_prism_pent)
-            layout.tvNameForm.text = getString(R.string.str_name_form, "Volumen de un prisma pentagonal")
+            layout.tvNameForm.text = getString(R.string.str_name_form, getString(R.string.str_name_vpp))
             layout.tvFirstParam.text = getString(R.string.str_parametros, "apotema",a)
             layout.tvSecondParam.text = getString(R.string.str_parametros, "l",l)
             layout.tvThirdParam.text = getString(R.string.str_parametros, "h",h)
-            layout.tvResult.text = getString(R.string.str_resultado, "Volumen", res)
+            layout.tvResult.text = getString(R.string.str_resultado, getString(R.string.str_hint_v), res)
         }
     }
 

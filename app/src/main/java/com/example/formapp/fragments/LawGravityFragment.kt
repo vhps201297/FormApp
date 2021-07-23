@@ -12,14 +12,6 @@ import com.example.formapp.utils.TextWatcherEditText
 
 class LawGravityFragment : Fragment() {
 
-    companion object {
-        @JvmStatic
-        fun getData(listener: ListenerFragments) =
-            LawGravityFragment().apply {
-                this.listener = listener
-            }
-    }
-    private var listener: ListenerFragments? = null
     private var _binding: FragmentLawGravityBinding? = null
     private val binding get() = _binding!!
 
@@ -39,18 +31,17 @@ class LawGravityFragment : Fragment() {
             edtxtM2.addTextChangedListener(TextWatcherEditText(tilM2))
             edtxtR.addTextChangedListener(TextWatcherEditText(tilR))
         }
-
         return binding.root
     }
 
     fun getValues(listener: ListenerFragments){
         with(binding){
             if (edtxtM1.text.toString().isEmpty()){
-                tilM1.error = getString(R.string.str_validation_m1)
+                tilM1.error = getString(R.string.str_validation_void, "M")
             } else if (edtxtM2.text.toString().isEmpty()){
-                tilM2.error = getString(R.string.str_validation_m2)
+                tilM2.error = getString(R.string.str_validation_void, "m")
             } else if (edtxtR.text.toString().isEmpty()){
-                tilR.error = getString(R.string.str_validation_r)
+                tilR.error = getString(R.string.str_validation_void, "r")
             } else if (edtxtR.text.toString().toFloat() == 0F){
                 tilR.error = getString(R.string.str_no_cero, "r")
             }
@@ -61,11 +52,6 @@ class LawGravityFragment : Fragment() {
                 bundle.putFloat("r", edtxtR.text.toString().toFloat())
                 listener.isValidated(bundle)
             }
-        }
-    }
-
-    fun watchErrorsTil(){
-        with(binding){
         }
     }
 

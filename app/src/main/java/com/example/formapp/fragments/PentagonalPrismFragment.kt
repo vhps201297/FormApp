@@ -37,11 +37,11 @@ class PentagonalPrismFragment : Fragment() {
     fun getValues(listener: ListenerFragments){
         with(binding){
             if (edtxtA.text.toString().isEmpty()){
-                tilA.error = getString(R.string.str_validate_a)
+                tilA.error = getString(R.string.str_validation_void, "a")
             } else if (edtxtL.text.toString().isEmpty()){
-                tilL.error = getString(R.string.str_validate_lado)
+                tilL.error = getString(R.string.str_validation_void, "l")
             } else if (edtxtH.text.toString().isEmpty()){
-                tilH.error = getString(R.string.str_validate_h)
+                tilH.error = getString(R.string.str_validation_void, "h")
             } else{
                 var bundle = Bundle()
                 bundle.putFloat("a", edtxtA.text.toString().toFloat())

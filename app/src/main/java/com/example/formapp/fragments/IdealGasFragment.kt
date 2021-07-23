@@ -43,7 +43,7 @@ class IdealGasFragment : Fragment(), AdapterView.OnItemClickListener {
     ): View? {
         _binding = FragmentIdealGasBinding.inflate(inflater, container, false)
 
-        val items = listOf("Presion (P)", "Volumen (V)", "n (Moles de gas)", "Temperatura (T)")
+        val items = listOf(getString(R.string.str_item_p), getString(R.string.str_item_v), getString(R.string.str_item_n), getString(R.string.str_item_t))
         val arrayAdapter = ArrayAdapter<String>(requireContext(), R.layout.support_simple_spinner_dropdown_item)
         arrayAdapter.addAll(items)
 
@@ -68,15 +68,15 @@ class IdealGasFragment : Fragment(), AdapterView.OnItemClickListener {
                 }
                 "V" ->{
                     val mapTmp = fillParams("P","n", "T")
-                    FormCalculator.calculateIdealGas("P", mapTmp)
+                    FormCalculator.calculateIdealGas("V", mapTmp)
                 }
                 "n" ->{
                     val mapTmp = fillParams("P","V", "T")
-                    FormCalculator.calculateIdealGas("P", mapTmp)
+                    FormCalculator.calculateIdealGas("n", mapTmp)
                 }
                 "T" ->{
                     val mapTmp = fillParams("P", "V", "n")
-                    FormCalculator.calculateIdealGas("P", mapTmp)
+                    FormCalculator.calculateIdealGas("T", mapTmp)
                 }
             }
 
@@ -103,7 +103,7 @@ class IdealGasFragment : Fragment(), AdapterView.OnItemClickListener {
     fun isDataValidate():Boolean{
         with(binding){
             if (spinnerIdealGas.editText!!.text.isEmpty()){
-                spinnerIdealGas.error = "Seleccione una variable"
+                spinnerIdealGas.error = getString(R.string.str_select_var)
                 return false
             } else if(edtxt1.text.toString().isEmpty()){
                 tilIdeal1.error = errorEdtxt1
